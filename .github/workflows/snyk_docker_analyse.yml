@@ -15,9 +15,14 @@ name: Snyk Container
 
 on:
   push:
-    branches: [ "main" ]
+    paths:
+      - "Dockerfile.dockerhub"
+      - "**.sh"
+      - "**.yml"
   schedule:
-    - cron: '45 15 * * 1'
+    - cron: '0 0 * * SUN'
+  pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: read

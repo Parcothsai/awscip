@@ -1,12 +1,17 @@
 name: docker-multiple-arch
 
 on:
+  schedule:
+    - cron: '0 0 * * SUN'
   push:
     paths:
       - "Dockerfile.dockerhub"
       - "**.sh"
-      - ".github/workflows/docker_build_multiple_arch.yml"
+      - "**.yml"
     branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
   docker:
     runs-on: ubuntu-latest
