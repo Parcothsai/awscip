@@ -19,6 +19,7 @@ on:
       - "Dockerfile.dockerhub"
       - "**.sh"
       - "**.yml"
+    branches: [ "main" ]
   schedule:
     - cron: '0 0 * * SUN'
   pull_request:
