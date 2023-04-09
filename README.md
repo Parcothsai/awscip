@@ -1,5 +1,7 @@
 # awscip
 
+![Github Action](https://github.com/Parcothsai/awscip/actions/workflows/docker_build_multiple_arch.yml/badge.svg?event=push)
+
 
 ## Description
 
