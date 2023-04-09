@@ -32,6 +32,6 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: linux/amd64,linux/arm32v6,linux/arm32v7,linux/arm64v8,linux/i386,linux/ppc64le,linux/riscv64,linux/s390x
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: luninfoparco/awscip:latest
