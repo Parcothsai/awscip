@@ -1,6 +1,7 @@
 # awscip
 
 ![Github Action](https://github.com/Parcothsai/awscip/actions/workflows/docker_build_multiple_arch.yml/badge.svg?event=push)
+![SNYK](https://github.com/Parcothsai/awscip/actions/workflows/snyk_docker_analyse.yml/badge.svg?event=push)
 
 
 ## Description
@@ -39,6 +40,6 @@ docker-compose up -d
 
 ## TODO
 
-- :x: Add github action to build docker image and push to https://hub.docker.com/r/luninfoparco/awscip
+- :ballot_box_with_check: Add github action to build docker image and push to https://hub.docker.com/r/luninfoparco/awscip
 - :x: Add the possibility for a user to have multiple domains
 - :x: Add kubernetes chart for cronjob
