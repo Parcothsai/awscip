@@ -18,7 +18,7 @@ RUN apk add --no-cache \
         awscli \
     && rm -rf /var/cache/apk/*
 
-COPY change_ip.sh ${root_dir}/change_ip.sh
+COPY scripts/change_ip.sh ${root_dir}/change_ip.sh
 RUN chmod +x ${root_dir}/change_ip.sh
 RUN touch ${root_dir}/domains.list
 
