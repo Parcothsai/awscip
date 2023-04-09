@@ -2,8 +2,9 @@ name: ci
 
 on:
   push:
-    branches:
-      - "add_github_action"
+    paths:
+      - "Dockerfile.dockerhub"
+      - "**.sh"
 
 jobs:
   docker:
