@@ -6,7 +6,7 @@ on:
       - "Dockerfile.dockerhub"
       - "**.sh"
       - ".github/workflows/docker_build_multiple_arch.yml"
-
+    branches: [ "main" ]
 jobs:
   docker:
     runs-on: ubuntu-latest

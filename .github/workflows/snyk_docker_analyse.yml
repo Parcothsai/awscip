@@ -15,7 +15,7 @@ name: Snyk Container
 
 on:
   push:
-    branches: [ "add_github_action" ]
+    branches: [ "main" ]
   schedule:
     - cron: '45 15 * * 1'
 
