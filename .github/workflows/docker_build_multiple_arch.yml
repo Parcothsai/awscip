@@ -9,8 +9,7 @@ on:
       - "**.sh"
       - "**.yml"
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 
 jobs:
   docker:
