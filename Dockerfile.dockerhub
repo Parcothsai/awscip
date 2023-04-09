@@ -22,5 +22,4 @@ COPY scripts/change_ip.sh ${root_dir}/change_ip.sh
 RUN chmod +x ${root_dir}/change_ip.sh
 RUN touch ${root_dir}/domains.list
 
-
 ENTRYPOINT [ "/bin/sh", "/scripts/change_ip.sh" ]
