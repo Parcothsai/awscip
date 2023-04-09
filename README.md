@@ -36,13 +36,13 @@ docker-compose up -d
 
 ## Versions
 
-|    name      | version      |
-|:------------:|:------------:|
-|    alpine    |    3.17.3    |
-|    python    |    3         |
-|    pip       |    3         |
-|    awscli    |    latest    |
-|              |              |
+|    name      |     version      |
+|:------------:|:----------------:|
+|    alpine    |    3.17.3        |
+|    python    |    3.10          |
+|    pip       |    22.3          |
+|    awscli    |    1.27          |
+|              |                  |
 
 
 ## TODO

@@ -9,13 +9,13 @@ ENV AWS_SECRET_ACCESS_KEY=""
 ENV AWS_REGION=""
 ENV AWS_ZONE_ID=""
 RUN apk add --no-cache \
-        python3 \
-        py3-pip \
-        curl \
-        bind-tools\
+        python3=~3.10 \
+        py3-pip=~22.3 \
+        curl=~7.88 \
+        bind-tools=~9.18\
     && pip3 install --upgrade pip \
     && pip3 install --no-cache-dir \
-        awscli \
+        awscli==1.27 \
     && rm -rf /var/cache/apk/*
 
 COPY scripts/change_ip.sh ${root_dir}/change_ip.sh
