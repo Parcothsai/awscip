@@ -6,6 +6,8 @@
 
 ## Description
 
+awscip for aws change ip.
+
 Create or update record to aws route53 on a single domain.
 
 DockerHub url : https://hub.docker.com/r/luninfoparco/awscip
@@ -21,11 +23,16 @@ sed -i "s/your_aws_secret_access_key/test/g" docker-compose.yml
 sed -i "s/your_aws_region/test/g" docker-compose.yml
 sed -i "s/your_aws_zone_id/test/g" docker-compose.yml
 
-touch domains.list
-echo "first.exemple.com\nsecond.exemple.com" >> domains.list
-docker-compose up -d
+cat > domains.list << EOF 
+first.exemple.com
+second.exemple.com
+EOF
 ```
 
+Then :
+```bash
+docker-compose up -d
+```
 
 ## Versions
 
