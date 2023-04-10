@@ -1,6 +1,6 @@
 #!/bin/sh
 
-domain_file="/scripts/domains.list"
+domain_file="/scripts/data/domains.list"
 zone_id=$(printenv AWS_ZONE_ID)
 dir_log="/scripts/logs"
 
