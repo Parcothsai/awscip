@@ -10,7 +10,7 @@ on:
       - "**.yml"
     branches: 
       - "main"
-      - "/dev/kubernetes"
+      - "dev/kubernetes"
 
 
 jobs:
