@@ -8,7 +8,9 @@ on:
       - "Dockerfile.dockerhub"
       - "**.sh"
       - "**.yml"
-    branches: [ "main" ]
+    branches: 
+      - "main"
+      - "/dev/*"
 
 
 jobs:
@@ -30,7 +32,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
+      - 
+        if: github.ref == 'refs/heads/dev/kubernetes'
         name: Build and push
         uses: docker/build-push-action@v4
         with:
@@ -38,4 +41,4 @@ jobs:
           file: Dockerfile.dockerhub
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: luninfoparco/awscip:latest
+          tags: luninfoparco/awscip:dev
