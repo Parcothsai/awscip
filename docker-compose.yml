@@ -8,5 +8,5 @@ services:
       - AWS_REGION=your_aws_region
       - AWS_ZONE_ID=your_aws_zone_id
     volumes:
-      - ./domains.list:/scripts/domains.list
+      - ./domains.list:/scripts/data/domains.list
       - ./log:/scripts/logs

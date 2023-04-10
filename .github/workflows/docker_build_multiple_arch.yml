@@ -42,3 +42,13 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: luninfoparco/awscip:dev
+      - 
+        if: github.ref == 'refs/heads/main'
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: Dockerfile.dockerhub
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: luninfoparco/awscip:latest

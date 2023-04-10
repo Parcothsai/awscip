@@ -12,11 +12,15 @@ Create or update record to aws route53 on a single domain.
 
 DockerHub url : https://hub.docker.com/r/luninfoparco/awscip
 
-## Using docker-compose
+## CLONE THIS PROJECT
 
 ```bash
 git clone https://github.com/Parcothsai/awscip.git
 cd  awscip
+```
+## Using docker-compose
+
+```bash
 # Replace "test" with your correct information
 sed -i "s/your_aws_access_key_id/test/g" docker-compose.yml
 sed -i "s/your_aws_secret_access_key/test/g" docker-compose.yml
@@ -34,6 +38,25 @@ Then :
 docker-compose up -d
 ```
 
+## USING KUBERNETES
+
+### HELM
+
+```bash
+# Replace "test" with your correct information
+sed -i "s/your_aws_access_key_id/test/g" awscip-chart/values.yaml
+sed -i "s/your_aws_secret_access_key/test/g" awscip-chart/values.yaml
+sed -i "s/your_aws_region/test/g" awscip-chart/values.yaml
+sed -i "s/your_aws_zone_id/test/g" awscip-chart/values.yaml
+```
+
+Change in awscip-chart/values.yaml cipDomainsList with your own domains
+
+Then :
+```bash
+helm install awscip ./awscip-chart/ --namespace awscip --create-namespace -f ./awscip-chart/values.yaml
+```
+
 ## Versions
 
 |    name      |     version      |
@@ -49,4 +72,4 @@ docker-compose up -d
 
 - :ballot_box_with_check: Add github action to build docker image and push to https://hub.docker.com/r/luninfoparco/awscip
 - :x: Add the possibility for a user to have multiple domains
-- :x: Add kubernetes chart for cronjob
+- :ballot_box_with_check: Add kubernetes chart for cronjob

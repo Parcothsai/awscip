@@ -1,0 +1,50 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "awscip-chart.fullname" . }}-cip
+  labels:
+  {{- include "awscip-chart.labels" . | nindent 4 }}
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_ACCESS_KEY_ID
+                  name: {{ include "awscip-chart.fullname" . }}-secret
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_SECRET_ACCESS_KEY
+                  name: {{ include "awscip-chart.fullname" . }}-secret
+            - name: AWS_REGION
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_REGION
+                  name: {{ include "awscip-chart.fullname" . }}-secret
+            - name: AWS_ZONE_ID
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_ZONE_ID
+                  name: {{ include "awscip-chart.fullname" . }}-secret
+            - name: KUBERNETES_CLUSTER_DOMAIN
+              value: {{ quote .Values.kubernetesClusterDomain }}
+            image: {{ .Values.cip.awscip.image.repository }}:{{ .Values.cip.awscip.image.tag
+              | default .Chart.AppVersion }}
+            imagePullPolicy: {{ .Values.cip.awscip.imagePullPolicy }}
+            name: awscip
+            resources: {}
+            volumeMounts:
+            - mountPath: /scripts/data
+              name: awscip-vm-cm
+              readOnly: true
+          volumes:
+          - configMap:
+              name: {{ include "awscip-chart.fullname" . }}-cip-domains-list
+            name: awscip-vm-cm
+  schedule: {{ .Values.cip.schedule | quote }}

@@ -1,0 +1,17 @@
+cip:
+  awscip:
+    image:
+      repository: luninfoparco/awscip
+      tag: latest
+    imagePullPolicy: IfNotPresent
+  schedule: 0 */6 * * *
+cipDomainsList:
+  domainsList: |-
+    first.exemple.com
+    second.exemple.com
+kubernetesClusterDomain: cluster.local
+secret:
+  awsAccessKeyId: "your_aws_access_key_id"
+  awsRegion: "your_aws_region"
+  awsSecretAccessKey: "your_aws_secret_access_key"
+  awsZoneId: "your_aws_zone_id"
