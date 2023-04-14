@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - 
-        if: github.ref == 'refs/heads/dev/*'
+        if: github.ref == 'refs/heads/dev/scripts'
         name: Build and push
         uses: docker/build-push-action@v4
         with:
@@ -41,7 +41,7 @@ jobs:
           file: Dockerfile.dockerhub
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: luninfoparco/awscip:dev
+          tags: luninfoparco/awscip:dev.scripts
       - 
         if: github.ref == 'refs/heads/main'
         name: Build and push
