@@ -1,0 +1,5 @@
+docker-compose.local.yml
+Dockerfile
+log
+domain.list
+domains.list

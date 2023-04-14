@@ -12,7 +12,7 @@ ENV AWS_ZONE_ID=""
 RUN apk add --no-cache \
         python3=~3.10 \
         py3-pip=~22.3 \
-        curl=~7.88 \
+        curl=~8.0 \
         bind-tools=~9.18\
     && pip3 install --upgrade pip \
     && pip3 install --no-cache-dir \
