@@ -24,6 +24,8 @@ ValidateIp()
             fi
           done
           EchoLog "$message $ip_to_check is valid"
+        elif [ "$ip_to_check" = "" ]; then
+                EchoLog "$message $ip_to_check not exist"
         else
           EchoLog "Could not get current IP address: $ip_to_check , exit 1"
           exit 1
