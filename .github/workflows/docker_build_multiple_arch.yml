@@ -41,7 +41,7 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: $PLATFORMS
+          platforms: ${{env.PLATFORMS}}
           push: true
           tags: luninfoparco/awscip:dev
       - 
@@ -51,6 +51,6 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: $PLATFORMS
+          platforms: ${{env.PLATFORMS}}
           push: true
           tags: luninfoparco/awscip:latest
