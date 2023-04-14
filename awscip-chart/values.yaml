@@ -3,8 +3,8 @@ cip:
     image:
       repository: luninfoparco/awscip
       tag: latest
-    imagePullPolicy: IfNotPresent
-  schedule: "0 */6 * * *"
+    imagePullPolicy: Always
+  schedule: "0 */1 * * *"
 cipDomainsList:
   domainsList: |-
     first.exemple.com
