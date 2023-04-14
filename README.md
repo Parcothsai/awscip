@@ -56,6 +56,7 @@ cipDomainsList:
   domainsList: |-
     first.exemple.com
     second.exemple.com
+    another.exemple.com
 ```
 
 Then :
@@ -63,6 +64,29 @@ Then :
 helm install awscip ./awscip-chart/ --namespace awscip --create-namespace -f ./awscip-chart/values.yaml
 ```
 
+Exemple of logs :
+```bash
+[14-04-2023-12-54]: -----------first.exemple.com-----------
+[14-04-2023-12-54]: New IP 192.168.1.10 is valid
+[14-04-2023-12-54]: Old IP 192.168.1.20 is valid
+[14-04-2023-12-54]: first.exemple.com is up to date
+[14-04-2023-12-54]: -----------second.exemple.com-----------
+[14-04-2023-12-54]: New IP 192.168.1.10 is valid
+[14-04-2023-12-54]: Old IP 192.168.1.20 is valid
+[14-04-2023-12-54]: second.exemple.com is up to date
+[14-04-2023-12-54]: -----------anoter.exemple.com-----------
+[14-04-2023-12-54]: New IP 192.168.1.10 is valid
+[14-04-2023-12-54]: Old IP 192.168.1.20 is valid
+[14-04-2023-12-54]: anoter.exemple.com : change  to 192.168.1.20
+{
+    "ChangeInfo": {
+        "Id": "/change/RANDOM_AWS_ID",
+        "Status": "PENDING",
+        "SubmittedAt": "2023-04-14T12:54:51.626Z",
+        "Comment": "Auto updating @ Fri Apr 14 12:54:50 UTC 2023"
+    }
+}
+```
 ## Versions
 
 |    name      |     version      |
