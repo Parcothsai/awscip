@@ -50,7 +50,13 @@ sed -i "s/your_aws_region/test/g" awscip-chart/values.yaml
 sed -i "s/your_aws_zone_id/test/g" awscip-chart/values.yaml
 ```
 
-Change in awscip-chart/values.yaml cipDomainsList with your own domains
+Change in awscip-chart/values.yaml :
+```yml
+cipDomainsList:
+  domainsList: |-
+    first.exemple.com
+    second.exemple.com
+```
 
 Then :
 ```bash

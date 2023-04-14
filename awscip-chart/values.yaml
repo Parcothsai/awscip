@@ -4,7 +4,7 @@ cip:
       repository: luninfoparco/awscip
       tag: latest
     imagePullPolicy: IfNotPresent
-  schedule: 0 */6 * * *
+  schedule: "0 */6 * * *"
 cipDomainsList:
   domainsList: |-
     first.exemple.com
