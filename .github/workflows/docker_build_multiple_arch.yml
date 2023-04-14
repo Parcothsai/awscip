@@ -10,7 +10,7 @@ on:
       - "**.yml"
     branches: 
       - "main"
-      - "dev/*"
+      - "dev"
 
 
 jobs:
@@ -33,15 +33,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - 
-        if: github.ref == 'refs/heads/dev/scripts'
+        if: github.ref == 'refs/heads/dev'
         name: Build and push
         uses: docker/build-push-action@v4
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
           push: true
-          tags: luninfoparco/awscip:dev.scripts
+          tags: luninfoparco/awscip:dev
       - 
         if: github.ref == 'refs/heads/main'
         name: Build and push
@@ -49,6 +49,6 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
           push: true
           tags: luninfoparco/awscip:latest
