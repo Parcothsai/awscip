@@ -19,7 +19,7 @@ ValidateIp()
           set $ip_to_check
           for quad in 1 2 3 4; do
             if eval [ \$$quad -gt 255 ]; then
-              EchoLog "Could not get current IP address: $newip , exit 1"
+              EchoLog "Could not get current IP address: $ip_to_check , exit 1"
               exit 1
             fi
           done

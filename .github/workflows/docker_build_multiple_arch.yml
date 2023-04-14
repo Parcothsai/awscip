@@ -12,6 +12,8 @@ on:
       - "main"
       - "dev"
 
+env:
+  PLATFORMS: "linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7"
 
 jobs:
   docker:
@@ -39,7 +41,7 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
+          platforms: ${{env.PLATFORMS}}
           push: true
           tags: luninfoparco/awscip:dev
       - 
@@ -49,6 +51,6 @@ jobs:
         with:
           context: .
           file: Dockerfile.dockerhub
-          platforms: linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7
+          platforms: ${{env.PLATFORMS}}
           push: true
           tags: luninfoparco/awscip:latest
