@@ -91,11 +91,12 @@ Exemple of logs :
 
 |    name      |     version      |
 |:------------:|:----------------:|
-|    alpine    |    3.17.3        |
-|    python    |    3.10          |
-|    pip       |    22.3          |
+|    alpine    |    3.18.0        |
+|    python    |    3.11          |
+|    pip       |    23.1          |
 |    awscli    |    1.27          |
-|              |                  |
+|    curl      |    8.0           |
+|    bind      |    9.18          |
 
 
 ## TODO
