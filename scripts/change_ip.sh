@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#Default domain_file
 domain_file="/scripts/data/domains.list"
 zone_id=$(printenv AWS_ZONE_ID)
 dir_log="/scripts/logs"
